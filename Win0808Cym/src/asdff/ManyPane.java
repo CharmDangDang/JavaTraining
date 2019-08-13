@@ -5,12 +5,15 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.Scrollable;
 
 public class ManyPane extends JFrame {
 	
@@ -21,6 +24,7 @@ public ManyPane() throws HeadlessException {
 		JPanel jpTop=new JPanel(); jpTop.setBackground(Color.GRAY);
 		JPanel jpMid=new JPanel(); jpMid.setBackground(Color.WHITE);
 		JPanel jpBot=new JPanel(); jpBot.setBackground(Color.YELLOW);
+		System.out.println(fsafsafds);
 		
 		
 		String[] jbt = {"열기","닫기","나가기"};
@@ -33,18 +37,27 @@ public ManyPane() throws HeadlessException {
 		
 		
 		
-		JTextField Ekr = new JTextField(16);
+		JTextField xnr = new JTextField(16);
 		
-		
+		jbtRL[2].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			System.exit(0);
+			}
+			});
+
+			
 		
 
 		jpBot.add(jbtBot);
-		jpBot.add(Ekr);
+		jpBot.add(xnr);
 		cp.add(jpTop,BorderLayout.NORTH);
 		cp.add(jpMid,BorderLayout.CENTER);	
 		cp.add(jpBot,BorderLayout.SOUTH);
 		setSize(560,560);
 		setVisible(true);
+		Cp.add(top,borerLayout.) 죄쇵합니다
+		오늘은 넘 ㅜ졸려서 따라적기가 계속 슬패하네요
+		
 		
 }
 	public static void main(String[] args) {
