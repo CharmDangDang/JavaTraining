@@ -13,8 +13,21 @@ import javax.swing.JPanel;
 
 public class ClinetYM extends JFrame {
 
-	public ClinetYM() throws HeadlessException {
-		super();
+	public ClinetYM() throws HeadlessException, IOException {
+		int port = 9588;
+		int times = 10;
+		ServerSocket sersoc = new ServerSocket(port);
+		OutputStream osm = new OutputStream() {
+			
+			@Override
+			public void write(int b) throws IOException {
+				// TODO Auto-generated method stub
+				
+			}
+		};	
+		DataOutputStream dos = new DataOutputStream(osm);
+		sersoc.accept();
+		
 		
 		Container container = getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,20 +42,7 @@ public class ClinetYM extends JFrame {
 	}
 
 	public static void main(String[] args) throws IOException {
-		int port = 9988;
-		int times = 10;
-		ServerSocket sersoc = new ServerSocket(port);
-		OutputStream osm = new OutputStream() {
-			
-			@Override
-			public void write(int b) throws IOException {
-				// TODO Auto-generated method stub
-				
-			}
-		};	
-		DataOutputStream dos = new DataOutputStream(osm);
-		sersoc.accept();
-		
+		new ClinetYM();
 		
 	}
 
